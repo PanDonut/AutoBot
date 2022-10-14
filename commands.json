@@ -1,0 +1,17 @@
+[
+    {
+        "name": "monke",
+        "description": "Znajduje jakiś filmik z YouTube'a (Małpa 🐒)"
+    },
+    {
+        "name": "refresh_commands",
+        "description": "Odśwież komendy"
+    },
+    {
+        "name": "vote",
+        "description": "Odśwież komendy",
+        "stringOptions": [
+            "A"
+        ]
+    }
+]
