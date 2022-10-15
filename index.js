@@ -8,7 +8,6 @@ const { compare } = require('image-ssim');
 const Pixelmatch = require('pixelmatch');
 const XMLHttpRequest = require('xhr2');
 const https = require("https");
-const { clientId, guildId, token } = require('./config.json');
 const Rembrandt = require("rembrandt");
 const client = new Discord.Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildVoiceStates] });
 const { RegisterCommands, UnRegisterCommands } = require('./command');
@@ -102,7 +101,7 @@ client.on('interactionCreate', interaction => {
 //   switch (interaction.commandName) {
 //     case "monke":
 //       youtube.getRandomVid("AIzaSyAOiPxJ8U77X51y2xqFdEgnLAo4T-QC-bU", "funny monkey", (err, data) => {
-//         client.api.interactions(interaction.id, interaction.token).callback.post({data: {
+//         client.api.interactions(interaction.id, interaction.process.env.TOKEN).callback.post({data: {
 //           type: 4,
 //           data: {
 //             content: `https://www.youtube.com/watch?v=${data.id.videoId}`
@@ -113,7 +112,7 @@ client.on('interactionCreate', interaction => {
 
 //     case "refresh_commands":
 //       if (interaction.member.roles.includes('1030191979935580310')) {
-//         client.api.interactions(interaction.id, interaction.token).callback.post({data: {
+//         client.api.interactions(interaction.id, interaction.process.env.TOKEN).callback.post({data: {
 //           type: 4,
 //           data: {
 //             content: "Refreshing"
@@ -124,7 +123,7 @@ client.on('interactionCreate', interaction => {
 //       break;
 //     case "refresh_commands":
 //       if (interaction.member.roles.includes('1030191979935580310')) {
-//         client.api.interactions(interaction.id, interaction.token).callback.post({data: {
+//         client.api.interactions(interaction.id, interaction.process.env.TOKEN).callback.post({data: {
 //           type: 4,
 //           data: {
 //             content: "Refreshing"
@@ -212,4 +211,4 @@ client.on('message', async message => {
   }
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
